@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>KT so nguyen to</label>
+<input id="so" type="number">
+<input type="button" onclick="ketqua()" value="onclick">
+<p>Ket qua: <span id="rs"></span></p>
+<script>
+    function kiemtra(so) {
+        if (so < 2)
+        {
+            return false;
+        }
+        else
+        {
+            for (let i = 2; i <=Math.sqrt(so); i ++)
+            {
+                if (so%i==0)
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    function ketqua() {
+        let tt = Number(document.getElementById("so").value)
+        if (kiemtra(tt)) {
+            document.getElementById("rs").innerHTML = tt + " la so nguyen to"
+        } else {
+            document.getElementById("rs").innerHTML = tt + " khong phai so nguyen to"
+        }
+    }
+
+</script>
+</body>
+</html>
